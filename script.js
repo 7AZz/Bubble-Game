@@ -1,4 +1,18 @@
 var timer = 60;
+var score = 0;
+
+
+
+function increaseScore(){
+    score += 10;
+    document.querySelector("#scoreval").textContent = score;
+}
+
+function getNewHit(){
+    var rn = Math.floor((Math.random()*10));
+    document.querySelector("#hitvar").textContent = rn;
+}
+
 function makeBubble(){
     var clutter = "";
 
@@ -22,5 +36,8 @@ function runTimer(){
     }, 1000);
 }
 
+document.querySelector("#pbtm").addEventListener("click")
+
 runTimer();
 makeBubble();
+getNewHit();
